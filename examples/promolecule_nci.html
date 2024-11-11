@@ -1,0 +1,774 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Promolecular properties: water dimer &#8212; Ayers Lab</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/promolecule_nci';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="atomdb package" href="../_autosummary/atomdb.html" />
+    <link rel="prev" title="Promolecule properties: introduction" href="promolecule_intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../api/index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Ayers Lab - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Ayers Lab - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../api/index.html">
+                    Welcome to AtomDB’s documentation!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="promolecule_intro.html">Promolecule properties: introduction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Promolecular properties: water dimer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../_autosummary/atomdb.html">atomdb package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../_autosummary/atomdb.datasets.html">atomdb.datasets package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../_autosummary/atomdb.datasets.gaussian.html">atomdb.datasets.gaussian package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_autosummary/atomdb.datasets.hci.html">atomdb.datasets.hci package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_autosummary/atomdb.datasets.nist.html">atomdb.datasets.nist package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_autosummary/atomdb.datasets.numeric.html">atomdb.datasets.numeric package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_autosummary/atomdb.datasets.slater.html">atomdb.datasets.slater package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../_autosummary/atomdb.datasets.uhf_augccpvdz.html">atomdb.datasets.uhf_augccpvdz package</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/theochem/AtomDB/blob/master/website/examples/promolecule_nci.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/theochem/AtomDB" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/theochem/AtomDB/issues/new?title=Issue%20on%20page%20%2Fexamples/promolecule_nci.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/examples/promolecule_nci.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Promolecular properties: water dimer</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependencies-and-download-example-files">Install dependencies and download example files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-water-dimer-data">Loading the water dimer data:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-grid-for-computing-the-properties">Define grid for computing the properties:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-promolecular-object-and-compute-the-properties-on-the-grid">Create the promolecular object and compute the properties on the grid:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-reduced-density-gradient">Compute reduced density gradient:</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="promolecular-properties-water-dimer">
+<h1>Promolecular properties: water dimer<a class="headerlink" href="#promolecular-properties-water-dimer" title="Link to this heading">#</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">promolecule</span></code> module in QC-AtomDB constructs approximate molecular (promolecular) properties as linear combinations  of atomic properties. This allows for the fast calculation of the reduced density gradient for large molecular systems. The following examples show how to calculate several molecular properties. As model systems the water molecule dimer will be used:</p>
+<img src="images/h2o_dimer.png" alt="drawing" style="width: 300px;"/>
+<section id="install-dependencies-and-download-example-files">
+<h2>Install dependencies and download example files<a class="headerlink" href="#install-dependencies-and-download-example-files" title="Link to this heading">#</a></h2>
+<p>To run this notebook in Google Colab, the AtomDB, IOData and Grid libraries need to be installed, and the geometry for the system needs to be downloaded. This can be done by uncommenting and running the next cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # Install packages in Google Colab.</span>
+<span class="c1"># # Don&#39;t run this cell if packages/data is already in your environment</span>
+<span class="c1"># ! pip install git+https://github.com/theochem/iodata.git</span>
+<span class="c1"># ! pip install git+https://github.com/theochem/grid.git</span>
+<span class="c1">## Install the AtomDB package</span>
+<span class="c1">## prefer to use the release from PyPI</span>
+<span class="c1">#! pip install qc-AtomDB</span>
+<span class="c1">## alternatively, install the development version from GitHub</span>
+<span class="c1"># ! python -m pip install git+https://github.com/theochem/AtomDB.git</span>
+
+<span class="c1"># # Download the example files</span>
+<span class="c1"># import os</span>
+<span class="c1"># from urllib.request import urlretrieve</span>
+
+<span class="c1"># fpath = &quot;data/&quot;</span>
+<span class="c1"># if not os.path.exists(fpath):</span>
+<span class="c1">#     os.makedirs(fpath, exist_ok=True)</span>
+
+<span class="c1"># urlretrieve(</span>
+<span class="c1">#     &quot;https://raw.githubusercontent.com/theochem/AtomDB/refs/heads/master/website/examples/data/h2o_dimer.xyz&quot;,</span>
+<span class="c1">#     os.path.join(fpath, &quot;h2o_dimer.xyz&quot;)</span>
+<span class="c1">#     )</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="loading-the-water-dimer-data">
+<h2>Loading the water dimer data:<a class="headerlink" href="#loading-the-water-dimer-data" title="Link to this heading">#</a></h2>
+<p>The following code loads geometry data for the water dimer. The <a class="reference external" href="https://iodata.readthedocs.io/en/latest/index.html">qc-iodata</a> package is used to read the data from a file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">atomdb</span>
+<span class="kn">import</span> <span class="nn">iodata</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">importlib_resources</span> <span class="kn">import</span> <span class="n">files</span>
+
+<span class="c1"># Load the H2O dimer from a .xyz file</span>
+<span class="n">data_file</span> <span class="o">=</span> <span class="s2">&quot;data/h2o_dimer.xyz&quot;</span>
+<span class="n">mol_data</span> <span class="o">=</span> <span class="n">iodata</span><span class="o">.</span><span class="n">load_one</span><span class="p">(</span><span class="n">data_file</span><span class="p">)</span>
+
+<span class="n">atnums</span> <span class="o">=</span> <span class="n">mol_data</span><span class="o">.</span><span class="n">atcorenums</span>
+<span class="n">atcoords</span> <span class="o">=</span> <span class="n">mol_data</span><span class="o">.</span><span class="n">atcoords</span>
+
+<span class="n">atnums_mono</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">atnums</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">atnums</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">atnums</span><span class="p">[</span><span class="mi">3</span><span class="p">]])</span>
+<span class="n">atcoords_mono</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">atcoords</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">atcoords</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">atcoords</span><span class="p">[</span><span class="mi">3</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Atomic numbers dimer:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">atnums</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Atomic coordinates dimer:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Atomic numbers monomer:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">atnums_mono</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Atomic coordinates monomer:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">atcoords_mono</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Atomic numbers dimer:
+ [8. 8. 1. 1. 1. 1.]
+Atomic coordinates dimer:
+ [[-3.18178101e-03  2.86604567e+00  0.00000000e+00]
+ [-3.18178101e-03 -2.63385134e+00  0.00000000e+00]
+ [-1.56049721e-01  1.05094178e+00  0.00000000e+00]
+ [-1.71174798e+00  3.45941149e+00  0.00000000e+00]
+ [ 9.59353124e-01 -3.18395394e+00  1.43347310e+00]
+ [ 9.59353124e-01 -3.18395394e+00 -1.43347310e+00]]
+Atomic numbers monomer:
+ [8. 1. 1.]
+Atomic coordinates monomer:
+ [[-3.18178101e-03  2.86604567e+00  0.00000000e+00]
+ [-1.56049721e-01  1.05094178e+00  0.00000000e+00]
+ [-1.71174798e+00  3.45941149e+00  0.00000000e+00]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="define-grid-for-computing-the-properties">
+<h2>Define grid for computing the properties:<a class="headerlink" href="#define-grid-for-computing-the-properties" title="Link to this heading">#</a></h2>
+<p>The following code defines a uniform grid of points where the properties will be computed. The grid is defined using the <a class="reference external" href="https://grid.qcdevs.org/">qc-grid</a> package for numerical integration.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">grid</span>
+
+<span class="c1"># Generate a 3D grid with a spacing of 0.2 Bohr and an extension of 5.0 Bohr</span>
+<span class="n">cubgrid</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">UniformGrid</span><span class="o">.</span><span class="n">from_molecule</span><span class="p">(</span><span class="n">atnums</span><span class="p">,</span> <span class="n">atcoords</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">rotate</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Grid origin:&quot;</span><span class="p">,</span> <span class="n">cubgrid</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of grid points:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cubgrid</span><span class="o">.</span><span class="n">points</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Grid origin: [-6.4 -8.4 -6.5]
+Number of grid points: 349440
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-the-promolecular-object-and-compute-the-properties-on-the-grid">
+<h2>Create the promolecular object and compute the properties on the grid:<a class="headerlink" href="#create-the-promolecular-object-and-compute-the-properties-on-the-grid" title="Link to this heading">#</a></h2>
+<p>The following code creates a <code class="docutils literal notranslate"><span class="pre">promolecule</span></code> object. The object is used to compute the promolecular properties on the grid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">dimer_promol</span> <span class="o">=</span> <span class="n">atomdb</span><span class="o">.</span><span class="n">make_promolecule</span><span class="p">(</span><span class="n">atnums</span><span class="o">=</span><span class="n">atnums</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="n">atcoords</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="s2">&quot;slater&quot;</span><span class="p">)</span>
+<span class="n">mono_promol</span> <span class="o">=</span> <span class="n">atomdb</span><span class="o">.</span><span class="n">make_promolecule</span><span class="p">(</span><span class="n">atnums</span><span class="o">=</span><span class="n">atnums_mono</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="n">atcoords_mono</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="s2">&quot;slater&quot;</span><span class="p">)</span>
+
+<span class="c1"># compute the density and gradient of the density at the grid points</span>
+<span class="n">dimer_rho</span> <span class="o">=</span> <span class="n">dimer_promol</span><span class="o">.</span><span class="n">density</span><span class="p">(</span><span class="n">cubgrid</span><span class="o">.</span><span class="n">points</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">dimer_grad_rho</span> <span class="o">=</span> <span class="n">dimer_promol</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">cubgrid</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+
+<span class="c1"># compute the density and gradient of the density at the monomer grid points</span>
+<span class="n">mono_rho</span> <span class="o">=</span> <span class="n">mono_promol</span><span class="o">.</span><span class="n">density</span><span class="p">(</span><span class="n">cubgrid</span><span class="o">.</span><span class="n">points</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mono_grad_rho</span> <span class="o">=</span> <span class="n">mono_promol</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">cubgrid</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Water dimer:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Max density: </span><span class="si">{</span><span class="n">dimer_rho</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">}</span><span class="s2"> at point </span><span class="si">{</span><span class="n">cubgrid</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="n">dimer_rho</span><span class="o">.</span><span class="n">argmax</span><span class="p">()]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Min density: </span><span class="si">{</span><span class="n">dimer_rho</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">}</span><span class="s2"> at point </span><span class="si">{</span><span class="n">cubgrid</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="n">dimer_rho</span><span class="o">.</span><span class="n">argmin</span><span class="p">()]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">max_grad_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dimer_grad_rho</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Max gradient: </span><span class="si">{</span><span class="n">dimer_grad_rho</span><span class="p">[</span><span class="n">max_grad_idx</span><span class="p">]</span><span class="si">}</span><span class="s2"> at </span><span class="si">{</span><span class="n">cubgrid</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="n">max_grad_idx</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Water monomer:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Max density: </span><span class="si">{</span><span class="n">mono_rho</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">}</span><span class="s2"> at point </span><span class="si">{</span><span class="n">cubgrid</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="n">mono_rho</span><span class="o">.</span><span class="n">argmax</span><span class="p">()]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Min density: </span><span class="si">{</span><span class="n">mono_rho</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">}</span><span class="s2"> at point </span><span class="si">{</span><span class="n">cubgrid</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="n">mono_rho</span><span class="o">.</span><span class="n">argmin</span><span class="p">()]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">max_grad_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">mono_grad_rho</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Max gradient: </span><span class="si">{</span><span class="n">mono_grad_rho</span><span class="p">[</span><span class="n">max_grad_idx</span><span class="p">]</span><span class="si">}</span><span class="s2"> at </span><span class="si">{</span><span class="n">cubgrid</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="n">max_grad_idx</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Water dimer:
+Max density: 58.822613951764545 at point [ 2.54168153e-09 -2.60000000e+00 -1.00000000e-01]
+Min density: 1.2377283201197663e-10 at point [ 6.2  8.2 -6.5]
+Max gradient: [ -27.52964686 -293.09156189  865.78533133] at [ 2.54168153e-09 -2.60000000e+00 -1.00000000e-01]
+
+Water monomer:
+Max density: 47.15235612981739 at point [ 2.54168153e-09  2.80000000e+00 -1.00000000e-01]
+Min density: 1.310490950417405e-12 at point [ 6.2 -8.4 -6.5]
+Max gradient: [-19.37085558 401.7291462  608.28125388] at [ 2.54168153e-09  2.80000000e+00 -1.00000000e-01]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="compute-reduced-density-gradient">
+<h2>Compute reduced density gradient:<a class="headerlink" href="#compute-reduced-density-gradient" title="Link to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://pubs.acs.org/doi/10.1021/ct100641a">reduced density gradient</a> is defined as:</p>
+<p>\begin{equation*}
+s(\mathbf{r}) = \frac{1}{2(3\pi^2)^{1/3}}\frac{|\nabla \rho (\mathbf{r})|}{\rho^{4/3}(\mathbf{r})}
+\end{equation*}</p>
+<p>The following code computes the reduced density gradient on the grid from the estimated promolecular properties (electron density and gradient of the electron density).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># compute the reduced density gradient for the dimer</span>
+<span class="n">coeff</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">dimer_grad_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dimer_grad_rho</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">dimer_rdg</span> <span class="o">=</span> <span class="n">dimer_grad_norm</span> <span class="o">/</span> <span class="p">(</span><span class="n">coeff</span> <span class="o">*</span> <span class="n">dimer_rho</span> <span class="o">**</span> <span class="p">(</span><span class="mi">4</span> <span class="o">/</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># compute the reduced density gradient for the monomer</span>
+<span class="n">mono_grad_norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">mono_grad_rho</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">mono_rdg</span> <span class="o">=</span> <span class="n">mono_grad_norm</span> <span class="o">/</span> <span class="p">(</span><span class="n">coeff</span> <span class="o">*</span> <span class="n">mono_rho</span> <span class="o">**</span> <span class="p">(</span><span class="mi">4</span> <span class="o">/</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Plot the reduced gradient as a function of the density</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">dimer_rho</span><span class="p">,</span> <span class="n">dimer_rdg</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Water dimer&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">mono_rho</span><span class="p">,</span> <span class="n">mono_rdg</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Water monomer&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\rho(R)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Reduced gradient&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set y-axis limits from 0 to 1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)</span>
+
+<span class="c1"># Add a legend</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a2f148680f134ecec86f4d9725d08f0e60c0b4a00e615e56fd0a885c6f726944.png" src="../_images/a2f148680f134ecec86f4d9725d08f0e60c0b4a00e615e56fd0a885c6f726944.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "theochem/AtomDB",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./examples"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="promolecule_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Promolecule properties: introduction</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../_autosummary/atomdb.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">atomdb package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependencies-and-download-example-files">Install dependencies and download example files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-water-dimer-data">Loading the water dimer data:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-grid-for-computing-the-properties">Define grid for computing the properties:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-promolecular-object-and-compute-the-properties-on-the-grid">Create the promolecular object and compute the properties on the grid:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-reduced-density-gradient">Compute reduced density gradient:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The QC-Dev Community with the support of Digital Research Alliance of Canada and The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023-2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
